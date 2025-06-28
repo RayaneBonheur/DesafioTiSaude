@@ -128,6 +128,8 @@ Ou utilize qualquer ferramenta de BI de sua preferência.
 └── README.md                         # Este arquivo de documentação
 ```
 
+------
+
 ## Observações
 * Os scripts SQL estão comentados para facilitar o entendimento da lógica.
 * Os dados das datas foram tratados considerando o padrão YYYY-MM-DD.
