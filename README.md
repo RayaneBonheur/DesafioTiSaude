@@ -38,12 +38,19 @@ Este projeto foi desenvolvido para atender ao desafio técnico proposto pela Ti.
 
 ## METODOLOGIA DE DESENVOLVIMENTO
 1.Levantamento dos Requisitos: Entendimento do desafio e definição das tarefas.
+
 2.Modelagem do Banco: Criação da tabela e definição dos tipos de dados.
+
 3.Importação de Dados: Transferência dos dados CSV para o banco.
+
 4.Manipulação dos Dados: Aplicação de regras via SQL para atualização.
+
 5.Análise e Relatórios: Desenvolvimento de consultas para gerar informações estratégicas.
+
 6.Automação com Python: Desenvolvimento de script para consultas dinâmicas e exportação.
+
 7.Visualização: Criação de gráficos para melhor entendimento dos dados.
+
 8.Documentação: Registro dos processos, instruções e tecnologias utilizadas.
 
 ------
