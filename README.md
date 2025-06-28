@@ -1,4 +1,4 @@
-# Desafio Técnico TiSaude
+# Desafio Técnico Ti.Saude
 
 Este projeto foi desenvolvido para atender ao desafio técnico proposto pela Ti.Saúde, que visa avaliar habilidades essenciais em manipulação de dados, SQL e Python para análise de agendamentos de consultas e procedimentos médicos. O objetivo é estruturar, manipular e analisar os dados para fornecer relatórios estratégicos que possam auxiliar na otimização da gestão dos serviços de saúde.
 
@@ -65,7 +65,7 @@ Este projeto foi desenvolvido para atender ao desafio técnico proposto pela Ti.
 - Instale o MySQL (ou utilize uma instância já disponível).
 - Crie um banco de dados novo para o projeto.
 - Execute o script SQL de criação da tabela agendamentos:
-  -- Exemplo:
+```sql
 CREATE TABLE agendamentos (
   id_agendamento INT PRIMARY KEY,
   id_paciente INT,
@@ -76,13 +76,57 @@ CREATE TABLE agendamentos (
   status_agendamento VARCHAR(50),
   valor_consulta DECIMAL(10,2)
 );
+```
 
+- Importe o arquivo agendamentos_tisaude.csv para a tabela agendamentos.
+- Execute o script SQL de atualização:
 
+```
+UPDATE agendamentos
+SET status_agendamento = 'Confirmado',
+    valor_consulta = valor_consulta * 1.10
+WHERE especialidade = 'Cardiologia' AND status_agendamento = 'Agendado';
 
+```
 
+2. Python
+- Certifique-se de ter Python 3.x instalado.
+- Instale as bibliotecas necessárias com o comando:
+```  
+pip install pandas mysql-connector-python
+```
+- Configure as credenciais de acesso ao banco no arquivo automacao_ortopedia.py.
+- Execute o script Python:
+``` 
+python automacao_ortopedia.py
+```
+3. Visualização
+Utilize o Excel para abrir as consultas exportadas e crie gráficos conforme desejado.
+Ou utilize qualquer ferramenta de BI de sua preferência.
 
+------
 
+## ESTRUTURA DOS ARQUIVOS NO REPOSITÓRIO
+```
+/desafio-tisaude/
+│
+├── agendamentos_tisaude.csv           # Arquivo de dados inicial
+├── create_table_agendamentos.sql      # Script para criar tabela no MySQL
+├── update_cardiologia.sql              # Script para atualização de dados
+├── relatorios.sql                     # Scripts SQL para os 4 relatórios
+├── automacao_ortopedia.py             # Script Python para automação e análise
+├── ortopedia_ultimos_30dias.csv       # CSV gerado pelo script Python
+├── visualizacao/                      # Pasta opcional para imagens ou dashboards
+│   └── produtividade_especialidade.png
+└── README.md                         # Este arquivo de documentação
+```
 
+## Observações
+* Os scripts SQL estão comentados para facilitar o entendimento da lógica.
+* Os dados das datas foram tratados considerando o padrão YYYY-MM-DD.
+* O acréscimo de 10% foi aplicado multiplicando o valor original por 1.10.
+* A seleção dos dados dos últimos 30 dias é dinâmica, baseada na data atual de execução do script.
+* O projeto pode ser adaptado para outros SGBDs com pequenas alterações.
 
 
 
